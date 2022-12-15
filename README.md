@@ -16,6 +16,7 @@ cd .\mp3_transcriber\
 mkvirtualenv -p python3.10 -a mp3_transcriber mp3_transcriber  #create a virtual environment
 pip install -r .\requirements.txt
 docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+cp .env-example .env
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload  #start server
 visit  127.0.0.1:8000/
 ```
